@@ -4,7 +4,7 @@ import { formatDate, hasAlarmParameter, filterPatients } from '../services/UserD
 import SortButton from './SortButton.jsx';
 import PatientTableCell from './PatientTableCell.jsx';
 import FilterMenu from './FilterMenu.jsx';
-import '../styles/tabella.css';
+import '../styles/Grid.css';
 
 function PatientGrid() {
     const [patients, setPatients] = useState([]);

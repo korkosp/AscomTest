@@ -1,7 +1,7 @@
 import React from 'react';
 import PatientGrid from './components/PatientsGrid';
 import { Container } from '@mui/material';
-import './styles/tabella.css'
+import './styles/Grid.css'
 
 const App = () => {
   return (

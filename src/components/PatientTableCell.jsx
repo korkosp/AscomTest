@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/tabella.css';
+import '../styles/Grid.css';
 
 const PatientTableCell = ({ children, hasAlarm, ...props }) => {
   return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/FilterMenu.css';
-
+import '../styles/Grid.css';
 const FilterMenu = ({ onFilterChange, onResetFilters }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [filters, setFilters] = useState({
