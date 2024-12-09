@@ -2,22 +2,27 @@
 
 
 
-Prerequisites
-Assicurati di avere Node.js e npm installati sulla tua macchina.
-
-Puoi verificare se sono installati eseguendo i seguenti comandi:
+Clone the Repository
+Clona il repository sulla tua macchina locale con il comando:
 
 bash
-node -v
-npm -v
-Se non sono installati, scarica e installa la versione LTS più recente di Node.js, che include anche npm.
+Copia codice
+git clone git@github.com:tuo-username/tuo-progetto.git
+Install Dependencies
+Accedi alla directory del progetto ed esegui il comando per installare tutte le dipendenze necessarie:
 
-Installation
-
-git clone [https://github.com/tuo-username/tuo-progetto.git](https://github.com/korkosp/AscomTest.git)
+bash
+Copia codice
+cd tuo-progetto
 npm install
-Questo comando scaricherà tutte le dipendenze necessarie per il progetto, incluse quelle per Vite.
+Run the Project
+Avvia il server locale in modalità di sviluppo con il comando:
 
-Running the Project
+bash
+Copia codice
 npm run dev
-Questo avvierà un server di sviluppo Vite. Il progetto sarà disponibile all'indirizzo: http://localhost:5173
+Access the Project
+Una volta avviato, puoi navigare al progetto nel tuo browser all'indirizzo:
+
+http://localhost:5173/
+
