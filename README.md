@@ -46,22 +46,21 @@ Open your browser and navigate to:
 ## 🔢 Sorting Functionality
 You can sort the patient list by clicking on the column headers:
 
-Cognome (Last Name)
-Nome (First Name)
-Sesso (Gender)
-Data di nascita (Birth Date)
-Parametri (Parameters)
+- Cognome (Last Name)
+- Nome (First Name)
+- Sesso (Gender)
+- Data di nascita (Birth Date)
+- Parametri (Parameters)
 
 Sorting toggles between:
 
-Ascending order (first click)
-Descending order (second click)
-Reset to default (third click)
+- Ascending order (first click)
+- Descending order (second click)
 
 Sorting Indicators
 
-▲ Indicates ascending order
-▼ Indicates descending order
+- ▲ Indicates ascending order
+- ▼ Indicates descending order
 
 ## 📦 Project Structure
 - `src/components/`: React components
