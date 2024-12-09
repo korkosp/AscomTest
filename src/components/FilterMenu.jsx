@@ -100,6 +100,14 @@ const FilterMenu = ({ onFilterChange, onResetFilters }) => {
             </div>
             <div className="filter-column">
               <h4>Data</h4>
+              <select 
+                className="filter-select"
+                value={filters.dateFilterType}
+                onChange={(e) => handleFilterChange('dateFilterType', e.target.value)}
+              >
+                <option value="none">Nessun Filtro</option>
+                <option value="range">data</option>
+              </select>
               {filters.dateFilterType === 'range' && (
                 <div className="date-range-inputs">
                   <div className="date-input-wrapper">
