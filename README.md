@@ -11,8 +11,8 @@ A React-based patient tracking dashboard that allows healthcare professionals to
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/patient-tracking-dashboard.git
-cd patient-tracking-dashboard
+git clone [https://github.com/yourusername/patient-tracking-dashboard.git](https://github.com/korkosp/AscomTest.git)
+cd AscomTest
 ```
 
 ### 2. Install Dependencies
