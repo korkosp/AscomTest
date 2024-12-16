@@ -9,6 +9,11 @@ A React-based patient tracking dashboard that allows healthcare professionals to
 
 ## 🔧 Installation
 
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/patient-tracking-dashboard.git
+cd patient-tracking-dashboard
+```
 
 ### 2. Install Dependencies
 ```bash
@@ -31,6 +36,7 @@ Open your browser and navigate to:
 - Advanced filtering options
 - Patient status tracking
 - Responsive design
+- Editable patients data
 
 ## 🔍 Filtering Options
 - Filter by patient status (Stable/Critical)
@@ -61,12 +67,3 @@ Sorting Indicators
 - `src/components/`: React components
 - `src/services/`: API and data services
 - `src/styles/`: CSS stylesheets
-
-## 📝 Notes
-- Requires an active internet connection
-- Uses basic authentication for API access
-- Optimized for modern web browsers
-
-## 🐛 Known Issues
-- Potential API connectivity issues
-- Limited to current API endpoint
