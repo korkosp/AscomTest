@@ -3,7 +3,7 @@ import '../styles/Grid.css';
 
 const PatientTableCell = ({ children, hasAlarm, ...props }) => {
   return (
-    <td 
+    <td
       {...props}
       className={`patient-table-cell ${hasAlarm ? 'alarm-cell' : ''}`}
     >

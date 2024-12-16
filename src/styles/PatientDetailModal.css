@@ -1,0 +1,102 @@
+.patient-detail-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    cursor: default;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.filter-button:hover {
+    background-color: #004a94;
+}
+
+.patient-info {
+    margin-bottom: 20px;
+}
+
+.patient-parameters table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.patient-parameters th, 
+.patient-parameters td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.parameter-alarm {
+    background-color: #fb3d3dc5;
+}
+
+.edit-form label {
+    display: block;
+    margin: 10px 0;
+}
+
+.edit-form input,
+.edit-form select {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-loading, 
+.modal-error {
+    text-align: center;
+    padding: 20px;
+}

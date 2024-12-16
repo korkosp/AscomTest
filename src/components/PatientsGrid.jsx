@@ -4,6 +4,7 @@ import { formatDate, hasAlarmParameter, filterPatients } from '../services/UserD
 import SortButton from './SortButton.jsx';
 import PatientTableCell from './PatientTableCell.jsx';
 import FilterMenu from './FilterMenu.jsx';
+import PatientDetailModal from './PatientDetailModal.jsx';
 import '../styles/Grid.css';
 
 function PatientGrid() {
@@ -18,6 +19,7 @@ function PatientGrid() {
     });
     const [sortField, setSortField] = useState(null);
     const [sortDirection, setSortDirection] = useState('asc');
+    const [selectedPatient, setSelectedPatient] = useState(null);
 
     useEffect(() => {
         const loadPatients = async () => {
@@ -56,6 +58,17 @@ function PatientGrid() {
             showCritical: true,
             sexFilter: 'all'
         });
+    };
+
+    const handlePatientUpdate = async (updatedPatient) => {
+        try {
+            // Fetch only the updated patient details
+            const updatedData = await fetchPatients();
+            setPatients(updatedData);
+            setSelectedPatient(null);
+        } catch (err) {
+            console.error('Error refreshing patient data:', err);
+        }
     };
 
     const renderSortButton = (field, label) => (
@@ -117,6 +130,7 @@ function PatientGrid() {
                                 <tr
                                     key={patient.id}
                                     className={patientHasAlarm ? 'patient-alarm' : ''}
+                                    onClick={() => setSelectedPatient(patient)}
                                 >
                                     <PatientTableCell hasAlarm={patientHasAlarm}>{patient.familyName}</PatientTableCell>
                                     <PatientTableCell hasAlarm={patientHasAlarm}>{patient.givenName}</PatientTableCell>
@@ -141,6 +155,14 @@ function PatientGrid() {
                     <span>Totale Pazienti: {filteredPatients.length}</span>
                 </div>
             </div>
+
+            {selectedPatient && (
+                <PatientDetailModal 
+                    patient={selectedPatient}
+                    onClose={() => setSelectedPatient(null)}
+                    onPatientUpdated={handlePatientUpdate}
+                />
+            )}
         </div>
     );
 }
