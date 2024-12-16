@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { formatDate } from '../services/UserDataService.jsx';
 import { updatePatient, fetchPatientDetails } from '../services/apiService.jsx';
-import '../styles/PatientDetailModal.css';
+import '../styles/PatientDetail.css';
 
-const PatientDetailModal = ({ patient, onClose, onPatientUpdated }) => {
+const PatientDetail = ({ patient, onClose, onPatientUpdated }) => {
     const [editMode, setEditMode] = useState(false);
     const [patientData, setPatientData] = useState({
         familyName: patient.familyName,
@@ -22,7 +22,7 @@ const PatientDetailModal = ({ patient, onClose, onPatientUpdated }) => {
                 setFullPatientDetails(details);
                 setLoading(false);
             } catch (err) {
-                console.error('Error in loadPatientDetails:', err);
+                console.error('Error', err);
                 setFullPatientDetails(patient);
                 setLoading(false);
             }
@@ -43,7 +43,7 @@ const PatientDetailModal = ({ patient, onClose, onPatientUpdated }) => {
         try {
             const updatedPatient = await updatePatient(patient.id, patientData);
             onPatientUpdated(updatedPatient);
-            onClose(); // Close the modal after successful update
+            onClose();
         } catch (err) {
             console.error('Patient update error:', err);
             setError(`Errore durante il salvataggio: ${err.message}`);
@@ -51,7 +51,6 @@ const PatientDetailModal = ({ patient, onClose, onPatientUpdated }) => {
     };
 
     const handleModalClose = (e) => {
-        // Check if the click is on the overlay
         if (e.target.classList.contains('patient-detail-modal')) {
             onClose();
         }
@@ -163,4 +162,4 @@ const PatientDetailModal = ({ patient, onClose, onPatientUpdated }) => {
     );
 };
 
-export default PatientDetailModal;
+export default PatientDetail;

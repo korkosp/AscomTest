@@ -9,11 +9,6 @@ A React-based patient tracking dashboard that allows healthcare professionals to
 
 ## 🔧 Installation
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/yourusername/patient-tracking-dashboard.git
-cd patient-tracking-dashboard
-```
 
 ### 2. Install Dependencies
 ```bash

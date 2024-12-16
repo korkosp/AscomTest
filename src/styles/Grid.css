@@ -76,6 +76,7 @@ body {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
+  table-layout: fixed; /* Fixed column widths */
 }
 
 .patient-table thead {
@@ -96,6 +97,13 @@ body {
   font-size: 12px;
 }
 
+.patient-table th:nth-child(1) { width: 15%; } /* Family Name */
+.patient-table th:nth-child(2) { width: 15%; } /* Given Name */
+.patient-table th:nth-child(3) { width: 10%; } /* Sex */
+.patient-table th:nth-child(4) { width: 20%; } /* Birth Date */
+.patient-table th:nth-child(5) { width: 15%; } /* Parameters */
+.patient-table th:nth-child(6) { width: 25%; } /* Status */
+
 .patient-table-cell {
   padding: 15px;
   border-bottom: 1px solid var(--color-border);
@@ -103,6 +111,9 @@ body {
   color: var(--color-text-primary);
   transition: background-color 0.2s ease;
   font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .patient-table tr:hover .patient-table-cell {

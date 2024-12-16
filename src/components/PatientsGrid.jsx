@@ -4,7 +4,7 @@ import { formatDate, hasAlarmParameter, filterPatients } from '../services/UserD
 import SortButton from './SortButton.jsx';
 import PatientTableCell from './PatientTableCell.jsx';
 import FilterMenu from './FilterMenu.jsx';
-import PatientDetailModal from './PatientDetailModal.jsx';
+import PatientDetail from './PatientDetail.jsx';
 import '../styles/Grid.css';
 
 function PatientGrid() {
@@ -62,12 +62,11 @@ function PatientGrid() {
 
     const handlePatientUpdate = async (updatedPatient) => {
         try {
-            // Fetch only the updated patient details
             const updatedData = await fetchPatients();
             setPatients(updatedData);
             setSelectedPatient(null);
         } catch (err) {
-            console.error('Error refreshing patient data:', err);
+            console.error('refresh errot:', err);
         }
     };
 
@@ -157,7 +156,7 @@ function PatientGrid() {
             </div>
 
             {selectedPatient && (
-                <PatientDetailModal 
+                <PatientDetail 
                     patient={selectedPatient}
                     onClose={() => setSelectedPatient(null)}
                     onPatientUpdated={handlePatientUpdate}

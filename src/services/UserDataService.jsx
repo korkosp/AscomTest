@@ -12,14 +12,14 @@ const hasAlarmParameter = (parameters) => {
 };
 
 const filterPatients = (patients, searchTerm, filters) => {
-  return patients.filter(patient => {
-      const nameMatch = patient.familyName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                        patient.givenName.toLowerCase().includes(searchTerm.toLowerCase());
+  if (!searchTerm || searchTerm.trim() === '') {
+    return patients.filter(patient => {
       const alarmStatus = hasAlarmParameter(patient.parameters);
       const statusMatch = (alarmStatus && filters.showCritical) || 
                           (!alarmStatus && filters.showStable);
       const sexMatch = filters.sexFilter === 'all' || patient.sex === filters.sexFilter;
       let dateMatch = true;
+      
       if (filters.dateFilterType === 'range') {
         const birthDate = new Date(patient.birthDate);
         if (filters.minDate) {
@@ -31,7 +31,44 @@ const filterPatients = (patients, searchTerm, filters) => {
           dateMatch = dateMatch && birthDate <= maxDate;
         }
       }
-      return nameMatch && statusMatch && sexMatch && dateMatch;
+      
+      return statusMatch && sexMatch && dateMatch;
+    });
+  }
+
+  const normalizedSearch = searchTerm.trim().toLowerCase();
+  const searchWords = normalizedSearch.split(/\s+/);
+
+  return patients.filter(patient => {
+    const fullName = `${patient.familyName} ${patient.givenName}`.toLowerCase();
+    const reversedFullName = `${patient.givenName} ${patient.familyName}`.toLowerCase();
+    
+    const nameMatches = searchWords.every(word => 
+      fullName.includes(word) || 
+      reversedFullName.includes(word) ||
+      patient.familyName.toLowerCase().includes(word) || 
+      patient.givenName.toLowerCase().includes(word)
+    );
+
+    const alarmStatus = hasAlarmParameter(patient.parameters);
+    const statusMatch = (alarmStatus && filters.showCritical) || 
+                        (!alarmStatus && filters.showStable);
+    const sexMatch = filters.sexFilter === 'all' || patient.sex === filters.sexFilter;
+    
+    let dateMatch = true;
+    if (filters.dateFilterType === 'range') {
+      const birthDate = new Date(patient.birthDate);
+      if (filters.minDate) {
+        const minDate = new Date(filters.minDate);
+        dateMatch = dateMatch && birthDate >= minDate;
+      }
+      if (filters.maxDate) {
+        const maxDate = new Date(filters.maxDate);
+        dateMatch = dateMatch && birthDate <= maxDate;
+      }
+    }
+
+    return nameMatches && statusMatch && sexMatch && dateMatch;
   });
 };
 

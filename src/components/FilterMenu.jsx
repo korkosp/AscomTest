@@ -20,7 +20,7 @@ const FilterMenu = ({ onFilterChange, onResetFilters }) => {
     onFilterChange(newFilters);
   };
 
-  const handleResetFilters = () => {
+  const reset = () => {
     const defaultFilters = {
       showStable: true,
       showCritical: true,
@@ -62,7 +62,7 @@ const FilterMenu = ({ onFilterChange, onResetFilters }) => {
       >
         filtri
       </button>
-      <button className="reset-filters-button" onClick={handleResetFilters}>↩️</button>
+      <button className="reset-filters-button" onClick={reset}>↩️</button>
 
       {isOpen && (
         <div className="filter-dropdown compact-dropdown">
