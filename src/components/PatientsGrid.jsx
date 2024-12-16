@@ -79,9 +79,7 @@ function PatientGrid() {
             {label}
         </SortButton>
     );
-
     const filteredPatients = filterPatients(patients, searchTerm, filters);
-
     if (loading) return (
         <div className="loading-container">
             <div className="spinner"></div>
@@ -129,8 +127,7 @@ function PatientGrid() {
                                 <tr
                                     key={patient.id}
                                     className={patientHasAlarm ? 'patient-alarm' : ''}
-                                    onClick={() => setSelectedPatient(patient)}
-                                >
+                                    onClick={() => setSelectedPatient(patient)}>
                                     <PatientTableCell hasAlarm={patientHasAlarm}>{patient.familyName}</PatientTableCell>
                                     <PatientTableCell hasAlarm={patientHasAlarm}>{patient.givenName}</PatientTableCell>
                                     <PatientTableCell hasAlarm={patientHasAlarm}>{patient.sex}</PatientTableCell>

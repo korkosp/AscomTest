@@ -116,8 +116,7 @@ const PatientDetail = ({ patient, onClose, onPatientUpdated }) => {
                                 <select 
                                     name="sex" 
                                     value={patientData.sex} 
-                                    onChange={handleInputChange}
-                                >
+                                    onChange={handleInputChange}>
                                     <option value="M">Maschio</option>
                                     <option value="F">Femmina</option>
                                 </select>
@@ -146,8 +145,7 @@ const PatientDetail = ({ patient, onClose, onPatientUpdated }) => {
                                 {fullPatientDetails.parameters && fullPatientDetails.parameters.map(param => (
                                     <tr 
                                         key={param.id} 
-                                        className={param.alarm ? 'parameter-alarm' : ''}
-                                    >
+                                        className={param.alarm ? 'parameter-alarm' : ''}>
                                         <td>{param.name}</td>
                                         <td>{param.value}</td>
                                         <td>{param.alarm ? 'Sì' : 'No'}</td>
