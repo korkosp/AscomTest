@@ -76,7 +76,7 @@ body {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  table-layout: fixed; /* Fixed column widths */
+  table-layout: fixed;
 }
 
 .patient-table thead {
@@ -97,12 +97,12 @@ body {
   font-size: 12px;
 }
 
-.patient-table th:nth-child(1) { width: 15%; } /* Family Name */
-.patient-table th:nth-child(2) { width: 15%; } /* Given Name */
-.patient-table th:nth-child(3) { width: 10%; } /* Sex */
-.patient-table th:nth-child(4) { width: 20%; } /* Birth Date */
-.patient-table th:nth-child(5) { width: 15%; } /* Parameters */
-.patient-table th:nth-child(6) { width: 25%; } /* Status */
+.patient-table th:nth-child(1) { width: 15%; } 
+.patient-table th:nth-child(2) { width: 15%; }
+.patient-table th:nth-child(3) { width: 10%; }
+.patient-table th:nth-child(4) { width: 20%; }
+.patient-table th:nth-child(5) { width: 15%; }
+.patient-table th:nth-child(6) { width: 25%; }
 
 .patient-table-cell {
   padding: 15px;
