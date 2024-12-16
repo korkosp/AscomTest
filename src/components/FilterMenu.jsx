@@ -62,7 +62,7 @@ const FilterMenu = ({ onFilterChange, onResetFilters }) => {
       >
         filtri
       </button>
-      <button className="reset-filters-button" onClick={reset}>↩️</button>
+      <button className="reset-filters-button" onClick={reset}>reset</button>
 
       {isOpen && (
         <div className="filter-dropdown compact-dropdown">
